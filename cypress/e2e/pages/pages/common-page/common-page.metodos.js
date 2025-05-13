@@ -4,6 +4,7 @@ import { CommonPageElements } from "./common-page.elements";
 export class CommonPageMetodos{
 
     static navigateToDemoBlaze(){
+        cy.clearCookies();
         cy.visit(CommonPageData.url); 
     }
 
@@ -29,6 +30,12 @@ export class CommonPageMetodos{
 
     static clickOnSignupOption(){
         CommonPageElements.topMenu.signup.click();
+    }
+
+    static verifyAlert(expectedMessage){
+        cy.on("Window:alert", (str) => {
+            expect(str).to.equal(expectedMessage)
+        })
     }
 
 }
