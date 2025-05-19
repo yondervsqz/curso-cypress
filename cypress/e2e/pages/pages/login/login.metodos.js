@@ -1,3 +1,4 @@
+import { CommonPageMetodos } from "../common-page/common-page.metodos";
 import { Logger } from "../util/logger";
 import { LoginElements } from "./login.elements";
 
@@ -23,5 +24,8 @@ export class LoginMetodos{
         this.clickOnLoginButton()
     }
 
+    static verifyWrongPasswordMessage(){
+        CommonPageMetodos.verifyAlert('Wrong password.')
+    }
 
 }
