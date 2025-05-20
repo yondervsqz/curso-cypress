@@ -1,7 +1,9 @@
-import { ProductDetailsElements } from "./product-details.metodos";
-
-export class ProductDetailsMetodos{
-    static clickOnAddToCarButton(){
-        ProductDetailsElements.buttons.addToCart.click();
+export class ProductDetailsElements {
+    static get buttons(){
+        return{
+            get addToCart(){
+                return cy.contains('a', 'Add to cart')
+            }
+        }
     }
 }
