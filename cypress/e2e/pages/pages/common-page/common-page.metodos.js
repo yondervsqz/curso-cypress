@@ -7,6 +7,7 @@ export class CommonPageMetodos{
         cy.clearAllCookies();
         cy.clearLocalStorage();
         cy.visit(CommonPageData.url); 
+        CommonPageMetodos.clickOnHomeOption();
     }
 
     static clickOnHomeOption(){
